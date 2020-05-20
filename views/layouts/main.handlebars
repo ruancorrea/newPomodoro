@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/LOGIN.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/pomodoro.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="icon" 
+      type="image/png" 
+      href="/img/pomodoro.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+</head>
+<body style="background-color: rgba(235, 229, 229, 0.931);">
+    {{>_navbar}}
+    <div class="container mt-4">
+        {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+        {{else}}
+        {{/if}}
+        {{>_msg}}
+        {{{body}}}
+
+        
+    <a href="#" class="btn btn-primary voltar-ao-topo"><span><i class="fa fa-arrow-up"></i></span></a>
+    </div>
+
+    <section id="footer" class="mt-3">
+		<div class="container">
+			<div class="row text-center text-xs-center text-sm-left text-md-left">
+				<div class=" col-md-4">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                    <h5 style="text-align: center;">CONTACT</h5>
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href="https://www.facebook.com/rhcs0" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="https://twitter.com/correaruan_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.instagram.com/ruan.correa_/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.linkedin.com/in/ruan-correa/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a href="https://github.com/ruancorrea" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+				</hr>
+			</div>	
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                    <p>Developed by Ruan Correa</p>
+				</div>
+				</hr>
+			</div>	
+		</div>
+	</section>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<!---    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> ---->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            // Exibe ou oculta o botão
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 200) {
+                    $('.voltar-ao-topo').fadeIn(200);
+                    $('#menu-toggle').fadeIn(200);
+                } else {
+                    $('.voltar-ao-topo').fadeOut(200);
+                }
+            });
+            
+            // Faz animação para subir
+            $('.voltar-ao-topo').click(function(event) {
+                event.preventDefault();
+                $('html, body').animate({scrollTop: 0}, 300);
+            })
+        });
+    </script>
+</body>
+</html>
